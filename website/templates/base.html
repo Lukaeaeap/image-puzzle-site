@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--The css and looks of bootstrap-->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200;600&family=Staatliches&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--Importing our own css and images-->
+    <link
+      rel="STYLESHEET"
+      href="{{ url_for('static', filename='css/index.css')}}"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.0.7/css/all.css"
+    />
+  </head>
+  <title>{% block title %}Home{% endblock %}</title>
+  <body>
+    <!--Create a content block for the html pages-->
+    <div class="header">
+      <ul class="nav-bar">
+        <li style="float: left" class="nav-item">
+          <a href="/"><h1>THE DAILY GAMER</h1></a>
+        </li>
+        <li class="nav-item"><a href="/">Logout</a></li>
+        <li class="nav-item"><a href="/">Contact</a></li>
+        <li class="nav-item"><a href="/">News</a></li>
+        <li class="nav-item"><a href="/">Home</a></li>
+      </ul>
+    </div>
+    <div class="content-main">{% block content %} {% endblock %}</div>
+    <div class="content-side">
+      <h2>Leaderboard</h2>
+
+      <ol>
+        <li>The dutchman</li>
+        <li>London warior</li>
+        <li>German millitary</li>
+      </ol>
+
+      <br />
+      <br />
+      <br />
+      <p1>Your place Luuk: 102.021 of the 102.022 participants!</p1>
+    </div>
+    <div class="footer">
+      <h2>About us</h2>
+      <p1>
+        We are a profit company that takes every penny we can get our hands on.
+        Want to help us grow, contact us at: donations@rich.com (not a real
+        email adress).
+      </p1>
+      <br />
+      <br />
+      <p1
+        >This project was started by Luuk Hoekstra who is still an inexperienced
+        programmer but who had just enough programming experience to make this
+        website work.</p1
+      >
+    </div>
+    <!--The javascript of bootstrap-->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
