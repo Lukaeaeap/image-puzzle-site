@@ -1,0 +1,77 @@
+{% extends "base.html" %}{% block title %}Register{% endblock %} {% block
+content %}
+<body>
+  <div class="register-box">
+    Register
+    <form method="POST">
+      <div class="data">
+        <label for="userName">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="userName"
+          name="userName"
+          required
+        />
+      </div>
+      <div class="data">
+        <label for="firstName">First name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+          name="firstName"
+          required
+        />
+      </div>
+      <div class="data">
+        <label for="lastName">Last name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+          name="lastName"
+          required
+        />
+      </div>
+      <div class="data">
+        <label for="email">Email adress</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          name="email"
+          required
+        />
+      </div>
+      <div class="data">
+        <label for="password1">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password1"
+          name="password1"
+          required
+        />
+      </div>
+      <div class="data">
+        <label for="password2">Password (confirmation)</label>
+        <input
+          type="password"
+          class="form-control"
+          id="password2"
+          name="password2"
+          required
+        />
+      </div>
+
+      <div class="box">
+        <button type="submit" class="btn btn-primary">Register</button>
+      </div>
+      <div style="text-align: center">
+        Already have an account?<a href="/login">Login</a>
+      </div>
+    </form>
+  </div>
+</body>
+{% endblock %}

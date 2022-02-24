@@ -36,16 +36,49 @@
   </head>
   <title>{% block title %}Home{% endblock %}</title>
   <body>
-    <!--Create a content block for the html pages-->
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %} {% for category, message in messages %} {% if category ==
+    'error'%}
+    <div class="alert alert-danger alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <!--Fancy x button-->
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {% else %}
+    <div class="alert alert-success alter-dismissable fade show" role="alert">
+      {{ message }}
+      <button type="button" class="close" data-dismiss="alert">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    {%endif%}{% endfor %} {% endif %} {% endwith %}
+
+    <!--Create a the content for each cell in the grid-->
     <div class="header">
       <ul class="nav-bar">
         <li style="float: left" class="nav-item">
           <a href="/"><h1>THE DAILY GAMER</h1></a>
         </li>
-        <li class="nav-item"><a href="/">Logout</a></li>
-        <li class="nav-item"><a href="/">Contact</a></li>
-        <li class="nav-item"><a href="/">News</a></li>
-        <li class="nav-item"><a href="/">Home</a></li>
+        <li style="float: left" class="nav-item">
+          <img
+            src="static/images/clock_logo.jpg"
+            alt="Logo of the site?"
+            width="100"
+            height="100"
+          />
+        </li>
+
+        {% if user.is_authenticated %}
+        <li class="nav-item"><a href="/">LOGOUT</a></li>
+        {% else %}
+        <li class="nav-item"><a href="/">LOGIN</a></li>
+        <li class="nav-item"><a href="/">SIGNUP</a></li>
+        {% endif %}
+        <li class="nav-item"><a href="/">CONTACT</a></li>
+        <li class="nav-item"><a href="/">NEWS</a></li>
+        <li class="nav-item"><a href="/">HOME</a></li>
       </ul>
     </div>
     <div class="content-main">{% block content %} {% endblock %}</div>

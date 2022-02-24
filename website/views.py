@@ -1,9 +1,11 @@
 from flask import Blueprint, render_template
+from flask_login import login_required, current_user
+from .models import User
+from . import db
 
 views = Blueprint('views', __name__)
 
 
 @views.route('/')
 def home():
-    print("ÿeet")
-    return render_template("home.html", debug=True)
+    return render_template("home.html", user=current_user)

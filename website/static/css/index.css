@@ -1,6 +1,16 @@
+:root {
+    --background: #14213d;
+    --main: #fca311;
+    --main-text: #000000;
+    --second-main: #e5e5e5;
+  }
+
 body {
+    padding-left: 15%;
+    padding-right: 15%;
+
     margin: 10px;
-    background-color: rgb(0, 0, 0);
+    background-color: var(--background);
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
     font-size: 20px;
@@ -20,7 +30,7 @@ body div {
 }
 
 .header {
-    background-color: rgb(255, 175, 25);
+    background-color: var(--second-main);
     grid-column-start: 1;
     grid-column-end: 4;
 }
@@ -36,26 +46,27 @@ body div {
 }
 
 .content-side {
-    background-color: rgb(192, 224, 102);
-    color: rgb(0, 0, 0);
+    background-color: var(--main);
+    color: var(--main-text);
     grid-column: 3;
     grid-row: 2 / span 2;
 }
 
 
 .footer {
-    background-color: rgb(255, 175, 25);
-    color: rgb(0, 0, 0);
+    background-color: var(--main);
+    color: var(--main-text);
     /*start at column 1 and end 3 columns further*/
     grid-column:1 / span 3; 
 }
 
 h1 {
-    font-family: 'Roboto Mono', monospace;
     font-size: 60px;
 }
 
 .nav-bar {
+    font-family: 'Roboto Mono', monospace;
+
     color: white;
     list-style-type: none;
     margin: 0;
@@ -82,4 +93,50 @@ h1 {
 
 .nav-item .active {
     background-color: #04AA6D;
+}
+
+.register-box {
+    text-align: left;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.input {
+    border-radius: 0px;
+    border: 0;
+    border-bottom: 1px solid;
+    width: 100%;
+    font-size: .7em;
+    padding: 2px 0;
+    color: #070707;
+    outline: none;
+}
+
+.right {
+    float: right;
+    text-align: center;
+
+}
+.left {
+    float: left;
+}
+
+a {
+    color: rgb(255, 175, 25);
+}
+a:hover {
+    color: rgb(160, 137, 62);
+
+}
+
+.login_oueter {
+    width: 360px;
+    max-width: 100%;
+}
+.logo_outer{
+    text-align: center;
+}
+.logo_outer img{
+    width:120px;
+    margin-bottom: 40px;
 }
